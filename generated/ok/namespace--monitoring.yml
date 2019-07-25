@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    company.com/kustomize-component-set: monitoring
+  name: monitoring

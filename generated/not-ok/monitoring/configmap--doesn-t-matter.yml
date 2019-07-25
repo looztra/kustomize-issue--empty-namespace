@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+data:
+  foo: bar
+kind: ConfigMap
+metadata:
+  annotations:
+    company.com/kustomize-component-set: monitoring
+  name: doesn-t-matter
+  namespace: monitoring
