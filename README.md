@@ -1,5 +1,9 @@
 # Kustomize v3.0.3 generates empty namespaces in some cases
 
+## Status
+
+The bug was reported by someone else, cf <https://github.com/kubernetes-sigs/kustomize/issues/1377>, this will be fixed in the next kustomize release.
+
 ## Requirements
 
 - [kubesplit](https://github.com/looztra/kubesplit) installed (`pip3 install -U --user kubesplit` for instance)
@@ -62,3 +66,16 @@ subjects:
 
 - OK => a configMapGenerator that generates a ConfigMap in another namespace as the one of the target ServiceAccount
 - NOK => a configMapGenerator that generates a ConfigMap in the same namespace as the one of the target ServiceAccount
+
+## Tip
+
+How to build a custom `kustomize` binary (for the record) when inside a source tree :
+
+```bash
+# bash
+GO111MODULE=on go build -o my-kustomize cmd/kustomize/main.go
+
+# Fish
+env GO111MODULE=on go build -o my-kustomize cmd/kustomize/main.go
+
+```
